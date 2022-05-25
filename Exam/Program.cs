@@ -16,11 +16,11 @@ int dataSize = 5;
 string[] initialData = new string[dataSize];
 
 // 2 - загрузка данных из файла
-initialData[0] = "Hi!";
+initialData[0] = "Hi!!";
 initialData[1] = "Hello,";
 initialData[2] = "World!";
-initialData[3] = " ";
-initialData[4] = "Bye";
+initialData[3] = "12345";
+initialData[4] = "Bye!";
 
 // в результате должен быть массив string[3] {"Hi!", " ", "Bye"}
 
@@ -57,21 +57,16 @@ Console.WriteLine();
 (int[], int) findStringsNotLongerThan(in string[] Strings, int MaxLength)
 {
     int indexCounter = 0; // тут будет хранится кол-во найденных элементов
-    int StringsCounter = Strings.Length; // длина исходного массива
+    int stringsCounter = Strings.Length; // длина исходного массива
 
-    int[] indexes = new int[StringsCounter]; // массив найденных индексов
+    int[] indexes = new int[stringsCounter]; // массив найденных индексов
     int index = 0; // для итерации
-
-    for (index = 0 ; index < StringsCounter; index++)
-    {
-        indexes[index] = -1; // устанавливаем начальное значение, не совпадающее ни с одним индексом, т.е. < 0
-    }
 
     /** begin Основной алгоритм - отбор */
     index = 0; // начальное значение в исходном массиве
     indexCounter = 0; // начальное значение в результирующем массиве
 
-    while (index < StringsCounter) {
+    while (index < stringsCounter) {
         if (Strings[index].Length <= MaxLength) {
             indexes[indexCounter] = index; // сначала сохраним, чтобы двигаться от 0
             indexCounter++;
@@ -90,5 +85,9 @@ void printStrings(string[] Strings, string Caption)
     for (int index = 0; index < Strings.Length; index++)
     {
         Console.WriteLine($"'{Strings[index]}'");
+    }
+
+    if (Strings.Length == 0) {
+        Console.WriteLine("<empty>");
     }
 }
