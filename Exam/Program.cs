@@ -32,8 +32,20 @@ initialData[4] = "Bye";
 (int[] positions, int positionsCounter) = findStringsNotLongerThan(initialData, 3);
 
 // 3.2 -- копирование из исходного массива элементов в результирующий массив
+string[] resultData = new string[positionsCounter]; // создадим результирующий массив нужной длины
+
+for (int index = 0; index < positionsCounter; index++)
+{
+    // в элемент c индексом index копируем значение строки с индексом positions[index] из initialData
+    resultData[index] = initialData[positions[index]];
+}
 
 // 4 - вывод начального и результирующего массивов и заверешение
+printStrings(initialData, "Input data:");
+printStrings(resultData, "Filtered data:");
+Console.WriteLine();
+
+// end
 
 /**
  * @param in string[] -- массив (исходный) строк
@@ -68,4 +80,14 @@ initialData[4] = "Bye";
     /** end of Основной алгоримт */
 
     return (indexes, indexCounter);
+}
+
+void printStrings(string[] Strings, string Caption)
+{
+    Console.WriteLine(Caption);
+    Console.WriteLine();
+    for (int index = 0; index < Strings.Length; index++)
+    {
+        Console.WriteLine(Strings[index]);
+    }
 }
