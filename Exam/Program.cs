@@ -11,32 +11,16 @@
  * Техническое решение описано в README.md
  */
 
-// 1 - начало и инициализация начальных переменных
-int dataSize = 5;
-string[] initialData = new string[dataSize];
-
-// 2 - загрузка данных из файла
-initialData[0] = "Hi!!";
-initialData[1] = "Hello,";
-initialData[2] = "World!";
-initialData[3] = " ";
-initialData[4] = "Bye";
+string[] initialData = new string[] {"Hi!", "Hello,", "World!", " ", "Bye"};
 
 // в результате должен быть массив string[3] {"Hi!", " ", "Bye"}
-
-// 3 - основной алгоритм:
-
-// 3.1 -- обход исходного массива строк, с целью запомнить индексы элементов,
-// для которых выполняется условие - длина строки меньше либо равно 3 и запоминание кол-ва таких элементов
-// результатом должно быть int[5] {0, 3, 4, -1, -1}
 (int[] positions, int positionsCounter) = findStringsNotLongerThan(initialData, 3);
 
-// 3.2 -- копирование из исходного массива элементов в результирующий массив
 string[] resultData = new string[positionsCounter]; // создадим результирующий массив нужной длины
 
 for (int index = 0; index < positionsCounter; index++)
 {
-    // в элемент c индексом index копируем значение строки с индексом positions[index] из initialData
+    // в элемент resultData c индексом index копируем значение строки с индексом positions[index] из initialData
     resultData[index] = initialData[positions[index]];
 }
 
@@ -72,7 +56,7 @@ Console.WriteLine();
 
         index++; // двигаемся к следующему элементу исходного массива
     }
-    /** end of Основной алгоримт */
+    /** end of Основной алгоритм */
 
     return (indexes, indexCounter);
 }
@@ -84,6 +68,7 @@ Console.WriteLine();
 void printStrings(string[] Strings, string Caption)
 {
     Console.WriteLine(Caption);
+
     for (int index = 0; index < Strings.Length; index++)
     {
         Console.WriteLine($"'{Strings[index]}'");
