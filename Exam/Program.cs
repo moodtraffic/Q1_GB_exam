@@ -42,6 +42,8 @@ for (int index = 0; index < positionsCounter; index++)
 
 // 4 - вывод начального и результирующего массивов и заверешение
 printStrings(initialData, "Input data:");
+Console.WriteLine();
+Console.WriteLine();
 printStrings(resultData, "Filtered data:");
 Console.WriteLine();
 
@@ -85,9 +87,8 @@ Console.WriteLine();
 void printStrings(string[] Strings, string Caption)
 {
     Console.WriteLine(Caption);
-    Console.WriteLine();
     for (int index = 0; index < Strings.Length; index++)
     {
-        Console.WriteLine(Strings[index]);
+        Console.WriteLine($"'{Strings[index]}'");
     }
 }
