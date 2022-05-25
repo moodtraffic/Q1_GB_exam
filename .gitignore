@@ -1,0 +1,6 @@
+# dotnet runtime files
+bin/
+obj/
+
+# VS Code files
+.vscode
