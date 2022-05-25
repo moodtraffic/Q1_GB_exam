@@ -24,14 +24,11 @@ for (int index = 0; index < positionsCounter; index++)
     resultData[index] = initialData[positions[index]];
 }
 
-// 4 - вывод начального и результирующего массивов и заверешение
 printStrings(initialData, "Input data:");
 Console.WriteLine();
 Console.WriteLine();
 printStrings(resultData, "Filtered data:");
 Console.WriteLine();
-
-// end
 
 /**
  * @param in string[] -- массив (исходный) строк
