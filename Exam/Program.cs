@@ -19,8 +19,8 @@ string[] initialData = new string[dataSize];
 initialData[0] = "Hi!!";
 initialData[1] = "Hello,";
 initialData[2] = "World!";
-initialData[3] = "12345";
-initialData[4] = "Bye!";
+initialData[3] = " ";
+initialData[4] = "Bye";
 
 // в результате должен быть массив string[3] {"Hi!", " ", "Bye"}
 
@@ -56,15 +56,13 @@ Console.WriteLine();
  */
 (int[], int) findStringsNotLongerThan(in string[] Strings, int MaxLength)
 {
-    int indexCounter = 0; // тут будет хранится кол-во найденных элементов
     int stringsCounter = Strings.Length; // длина исходного массива
 
     int[] indexes = new int[stringsCounter]; // массив найденных индексов
-    int index = 0; // для итерации
 
     /** begin Основной алгоритм - отбор */
-    index = 0; // начальное значение в исходном массиве
-    indexCounter = 0; // начальное значение в результирующем массиве
+    int index = 0; // начальное значение в исходном массиве
+    int indexCounter = 0; // начальное значение в результирующем массиве
 
     while (index < stringsCounter) {
         if (Strings[index].Length <= MaxLength) {
@@ -79,6 +77,10 @@ Console.WriteLine();
     return (indexes, indexCounter);
 }
 
+/**
+ * @param string[] Массив строк
+ * @param strirng Заголовок
+ */
 void printStrings(string[] Strings, string Caption)
 {
     Console.WriteLine(Caption);

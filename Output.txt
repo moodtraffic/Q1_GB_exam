@@ -1,0 +1,72 @@
+$ dotnet run
+Input data:
+'Hi!'
+'Hello,'
+'World!'
+' '
+'Bye'
+
+
+Filtered data:
+'Hi!'
+' '
+'Bye'
+
+
+###
+
+$ dotnet run
+Input data:
+'Hi!!!'
+'Hello,'
+'World!'
+'12345'
+'Bye'
+
+
+Filtered data:
+'Bye'
+
+
+### В исходном массиве длина каждой строки больше 3 символов
+
+$ dotnet run
+Input data:
+'Hi!!'
+'Hello,'
+'World!'
+'12345'
+'Bye!'
+
+
+Filtered data:
+<empty>
+
+
+### В исходном массиве длина каждой строки меньше либо равна 3 символам
+
+$ dotnet run
+Input data:
+'Hi!'
+'He'
+'Wo'
+'123'
+'By'
+
+
+Filtered data:
+'Hi!'
+'He'
+'Wo'
+'123'
+'By'
+
+### Исходный массив пустой
+
+$ dotnet run
+Input data
+<empty>
+
+
+Filtered data:
+<empty>
