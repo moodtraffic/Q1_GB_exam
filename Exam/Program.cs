@@ -11,9 +11,22 @@
  * Техническое решение описано в README.md
  */
 
-string[] initialData = new string[] {"Hi!", "Hello,", "World!", " ", "Bye"};
+ string[] initialData = new string[] {};
 
+// string[] initialData = new string[] {"Hi!", "Hello,", "World!", " ", "Bye"};
 // в результате должен быть массив string[3] {"Hi!", " ", "Bye"}
+
+try {
+    initialData = getStringsFromfile("./Input.txt");
+
+    Console.WriteLine();
+} catch (Exception e) {
+    Console.WriteLine("Oops! An error occured: {0}", e.Message);
+    Console.WriteLine("Exit");
+
+    Environment.Exit(0);
+}
+
 (int[] positions, int positionsCounter) = findStringsNotLongerThan(initialData, 3);
 
 string[] resultData = new string[positionsCounter]; // создадим результирующий массив нужной длины
@@ -74,4 +87,11 @@ void printStrings(string[] Strings, string Caption)
     if (Strings.Length == 0) {
         Console.WriteLine("<empty>");
     }
+}
+
+string[] getStringsFromfile(string Filename)
+{
+    string[] Strings = File.ReadAllLines(Filename);
+
+    return Strings;
 }
